@@ -128,7 +128,7 @@ SW-420 常閉型震動振動感測器模組 * 1 <br />
     sleep(2)
     camera.capture('/home/pi/Desktop/pytohn_text/image.jpg')
     camera.stop_preview()
-### 4.錄影程式碼部分(這裡指的是單純十秒的鏡頭錄影)<br />
+### 4.錄影程式碼部分(這裡指的是單純十秒的鏡頭錄影 實際合併後的程式碼錄影結束時間為接收到碰撞的當下)<br />
     from picamera import PiCamera
     from time import sleep
 
@@ -165,7 +165,8 @@ SW-420 常閉型震動振動感測器模組 * 1 <br />
     SCOPES = 'https://www.googleapis.com/auth/drive'
     CLIENT_SECRET_FILE = 'client_id.json'
     APPLICATION_NAME = 'Python OCR'
-
+    
+    # 執行錄影、拍照及API主程式的函式
     def camera():
         camera = PiCamera()
         camera.start_recording('/home/pi/Desktop/python_text/video.h264')
